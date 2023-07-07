@@ -324,24 +324,24 @@ $('.timeline').timelify({
     
 
 });
-
 function JaMap() {
- var mapCanvas = document.getElementById("map");
-
-data = mapCanvas.dataset;
-var Zom = data.zom;
- var myCenter = new google.maps.LatLng(data.lat,data.lng);
- var mapOptions = {
- center: myCenter,
- zoom: 14,
- };
- var map = new google.maps.Map(mapCanvas,mapOptions);
- var marker = new google.maps.Marker({
-   position: myCenter,
-   icon: data.icon
- });
- marker.setMap(map);
-}
+    var mapCanvas = document.getElementById("map");
+    data = mapCanvas.dataset;
+    var Zom = data.zom;
+    var myCenter = new google.maps.LatLng(data.lat, data.lng);
+    var mapOptions = {
+      center: myCenter,
+      zoom: parseInt(Zom),
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var marker = new google.maps.Marker({
+      position: myCenter,
+      icon: data.icon,
+    });
+    marker.setMap(map);
+  }
+  
+  google.maps.event.addDomListener(window, 'load', JaMap);
 
 
 $(function ($) {
