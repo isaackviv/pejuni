@@ -357,5 +357,9 @@ $(function ($) {
        }
    } 
 
-
+   jQuery(document).ready(function()
+   {
+   jQuery('.main-text').addClass('active');
+   setTimeout(function(){ jQuery('.main-text').removeClass('active'); }, 8000);
+   });
  
